@@ -3,6 +3,21 @@
 
 #include"string.h"
 using namespace std;
+
+
+
+void test1()
+{
+	std::string foo = "alpha";
+	std::string bar = "beta";
+
+	if (foo == bar) std::cout << "foo and bar are equal\n";
+	if (foo != bar) std::cout << "foo and bar are not equal\n";
+	if (foo < bar) std::cout << "foo is less than bar\n";
+	if (foo > bar) std::cout << "foo is greater than bar\n";
+	if (foo <= bar) std::cout << "foo is less than or equal to bar\n";
+	if (foo >= bar) std::cout << "foo is greater than or equal to bar\n";
+}
 int main()
 {
 	sht::string s("i love you");
@@ -60,4 +75,5 @@ int main()
 
 	//s.insert(2, 'u');
 	s.insert(0, "fuck you");
+	test1();
 }

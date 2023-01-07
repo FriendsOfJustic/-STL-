@@ -206,31 +206,67 @@ namespace sht
 
         bool operator<(const string& s)
         {
+            int i = 0;
+            while (i < s._size && i < _size)
+            {
+                if (_str[i] < s._str[i])
+                    return true;
+                else
+                    return false;
+                i++;
+            }
 
+            if (i == s._size)
+                return false;
+            else
+                return true;
         }
 
         bool operator<=(const string& s)
         {
-
+            return this->operator>(s);
         }
 
         bool operator>(const string& s)
         {
+            int i = 0;
+            while (i < s._size && i < _size)
+            {
+                if (_str[i] > s._str[i])
+                    return true;
+                else
+                    return false;
+                i++;
+            }
 
+            if (i == s._size)
+                return true;
+            else
+                return false;
         }
 
         bool operator>=(const string& s)
         {
-
+            return !this->operator<(s);
         }
 
         bool operator==(const string& s)
         {
-
+            if (_size != s._size)
+                return false;
+            int i = 0;
+            while (i < s._size)
+            {
+                if (_str[i] != s._str[i])
+                    return false;
+                i++;
+            }
+            return true;
         }
 
         bool operator!=(const string& s)
         {
+            return !this->operator==(s);
 
         }
 
@@ -305,6 +341,11 @@ namespace sht
 
         string& erase(size_t pos, size_t len)
         {
+
+
+
+
+
 
         }
 
