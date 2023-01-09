@@ -1,0 +1,2 @@
+D:\学习资料\比特教育\-STL-\string\Debug\string.exe
+D:\学习资料\比特教育\-STL-\string\Debug\string.pdb

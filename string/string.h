@@ -4,22 +4,73 @@
 #include<stdlib.h>
 #include<iostream>
 #include<assert.h>
+#include"revese_iterator.h"
 namespace sht
 {
 #define npos -1
-    class string
 
+    template<class T,class Ref,class Ptr>
+    class iterator
     {
+        typedef iterator<T, T&, T*> Self;
+    public:
+        iterator(char *p=nullptr)
+            :_p(p)
+        {
 
-        //friend ostream& operator<<(ostream& _cout, const bit::string& s);
+        }
 
-        //friend istream& operator>>(istream& _cin, bit::string& s);
+        Ref operator*()
+        {
+            return *_p;
+        }
+
+        Self& operator++()
+        {
+            ++_p;
+            return *this;
+        }
+
+        Self& operator--()
+        {
+            --_p;
+            return *this;
+        }
+
+
+        Ptr operator->()
+        {
+            return _p;
+        }
+
+        bool operator!=(const Self& t) const
+        {
+            return _p != t._p;
+        }
+
+    private:
+        T* _p;
+
+    };
+
+
+
+
+
+
+    class string
+    {
+        //为什么要设计成友元？这是因为运算符重载 cout<<string 默认左边的是左参数，右边的是右参数，所以刚才的写法实际上是cout.operator<<(string),
+        //但是实际上我们设想的调用是 string.
+        friend std::ostream& operator<<(std::ostream& _cout, const sht::string& s);  
+
+        friend std::istream& operator>>(std::istream& _cin, sht::string& s);
 
     public:
+        typedef iterator<char, char&, char*> iterator;
+        //sht::reverse_iterator<iterator, char&, char*> _rit;
+        typedef reverse_iterator<iterator, char&, char*> reverse_iterator;
 
-        typedef char* iterator;
-
-    public:
 
         string(const char* str = "")
             :_str(nullptr)
@@ -74,7 +125,15 @@ namespace sht
             return _str + _size;
         }
 
+        reverse_iterator rbegin()
+        {
+            return end();
+        }
 
+        reverse_iterator rend()
+        {
+            return begin();
+        }
 
             /////////////////////////////////////////////////////////////
 
@@ -341,12 +400,12 @@ namespace sht
 
         string& erase(size_t pos, size_t len)
         {
+            for (int i = pos+len ; i <=_size; i++)
+            {
+                _str[i - len]=_str[i] ;
 
-
-
-
-
-
+            }
+            return *this;
         }
 
     private:
@@ -359,4 +418,26 @@ namespace sht
 
     };
 
+    std::ostream& operator<<(std::ostream& _cout, const sht::string& s)
+    {
+        _cout << s._str;
+        return _cout;
+    }
+
+    std::istream& operator>>(std::istream& _cin, sht::string& s)
+    {
+        char a;
+        std::cin >> a;
+        while (a != '\n')
+        {
+            s.push_back(a);
+            _cin.get(a);
+        }
+       
+
+
+        return _cin;
+    }
+
 }
+

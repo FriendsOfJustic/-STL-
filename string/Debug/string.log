@@ -1,0 +1,13 @@
+﻿  源.cpp
+D:\学习资料\比特教育\-STL-\string\string.h(161,31): warning C4018: “<”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(225,35): warning C4018: “<”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(269,22): warning C4018: “<”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(269,37): warning C4018: “<”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(292,22): warning C4018: “<”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(292,37): warning C4018: “<”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(317,22): warning C4018: “<”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(366,31): warning C4018: “>”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(376,31): warning C4018: “<”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(381,52): warning C4018: “>”: 有符号/无符号不匹配
+D:\学习资料\比特教育\-STL-\string\string.h(403,38): warning C4018: “<=”: 有符号/无符号不匹配
+  string.vcxproj -> D:\学习资料\比特教育\-STL-\string\Debug\string.exe
