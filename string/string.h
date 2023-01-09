@@ -37,6 +37,20 @@ namespace sht
             return *this;
         }
 
+        Self operator++(int)
+        {
+            Self tmp = *this;
+            ++(*this);
+            return tmp;
+        }
+
+
+        Self operator--(int)
+        {
+            Self tmp = *this;
+            --(*this);
+            return tmp;
+        }
 
         Ptr operator->()
         {
@@ -82,6 +96,9 @@ namespace sht
         }
 
         string(const string& s)
+            :_str(nullptr)
+            ,_size(0)
+            ,_capacity(0)
         {
            /* _capacity = s._capacity;
             _size = s._size;

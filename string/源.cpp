@@ -58,68 +58,34 @@ void test4()
 }
 
 
+void test5()
+{
+	sht::string s("i loveyou");
+	auto it = s.rbegin();
+	for (auto e : s)
+	{
+		cout << e;
+	}
+	cout << endl;
+	auto is = it;
+	while (it != s.rend())
+	{
+		cout << *it;
+		++it;
+	}
+}
+
+void test6()
+{
+	sht::string s;
+	s.insert(0, "you");
+	s.insert(0, "love ");
+	s.insert(0, "i ");
+	cout << s;
+}
+
 
 int main()
 {
-	//sht::string s("i love you");
-	////s.reserve(100);
-	////s.resize(20, 'c');
-
-	//sht::string s1(s);
-	///*s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');
-	//s1.push_back('a');*/
-
-	////s1.append(" i love you too honey!");
-	//s1 += " i love you too honey!";
-
-	//sht::string s2 = s1 = s;
-	//s2.clear();
-	////cout << s2[1] << endl;
-
-
-
-	///*sht::string a;
-	//a.push_back('a');
-	//a.push_back('a');
-	//a.push_back('a');
-	//a.push_back('a');
-	//a.push_back('a');
-	//a.push_back('a');
-	//a.push_back('a');
-	//a.push_back('a');*/
-
-	////cout<<s1.find('y', 0);
-
-	///*const char* a = s.c_str();
-	//cout << a << endl;
-	//cout << s.find("love");*/
-
-
-
-	////s.insert(2, 'u');
-	//s.insert(0, "fuck you");
-	//test1();
-
-
-	//test2();
-
-	test4();
+	test6();
 }
